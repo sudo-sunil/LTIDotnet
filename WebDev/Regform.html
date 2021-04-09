@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Registration Form</title>
+</head>
+<body>
+    <form>
+        <table border="1">
+            <tr>
+                <td>Enter Name</td>
+                <td><input type="text" placeholder="enter name" /></td>
+            </tr>
+            <tr>
+                <td>Enter Address</td>
+                <td><textarea rows="10" cols="15" placeholder="enter address"></textarea></td>
+            </tr>
+            <tr>
+                <td>Enter Password</td>
+                <td><input type="password" placeholder="enter password" /></td>
+            </tr>
+            <tr>
+                <td>Select gender</td>
+                <td><input type="radio" value="Male" name="g" />M
+                       <input type="radio" value="Female" name="g" />F
+               </td>
+            </tr>
+            <tr>
+                <td>Select Skillsets</td>
+                <td>
+                    <input type="checkbox" value="C#" />C#
+                    <input type="checkbox" value="SQLServer" />Sql
+                    <input type="checkbox" value="HTML" />HTML
+                    <input type="checkbox" value="JavaScript" />JS
+                 </td>
+            </tr>
+            <tr>
+                <td>Select Country</td>
+                <td><select>
+                    <option>India</option>
+                    <option>US</option>
+                    <option>UK</option>
+                    <option>SL</option>
+                    </select></td>
+            </tr>
+            <!--combo box but allows multiple selection-->
+            <tr>
+                <td>Select Hobbies</td>
+                <td><select multiple>
+                       <option>Reading</option>
+                    <option>Diving</option>
+                    <option>Skiiing</option>
+                    <option>Trekking</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><input type="submit" style="background-color: blue;" /></td>
+                <td><input type="reset" style="background-color: red;" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

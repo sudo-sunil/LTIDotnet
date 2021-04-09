@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Scripts/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+         $("#b1").click(function(){
+             $("div:first").show();
+         })
+         $("#b2").click(function(){
+             $("div:first").hide();
+         })
+         $("#b3").click(function(){
+             $("div").toggle();
+         })
+         $("#b4").click(function(){
+             $("#d1").fadeIn();
+             $("#d2").fadeIn("slow");
+             $("#d3").fadeIn(3000);
+         })
+         $("#b5").click(function(){
+             $("#d1").fadeOut();
+             $("#d2").fadeOut("slow");
+             $("#d3").fadeOut(3000);
+         })
+
+    })
+    </script>
+</head>
+<body>
+   <div style="background-color: blueviolet;width: 200px;height: 200px;" id="d1"></div> 
+    <hr>
+   <div style="background-color: blueviolet;width: 200px;height: 200px;" id="d2"></div>
+   <hr>
+   <div style="background-color: blueviolet;width: 200px;height: 200px;" id="d3"></div>
+   <hr>
+   <button id="b1">Show</button>
+   <button id="b2">Hide</button>
+   <button id="b3">Toggle</button>
+   <button id="b4">fadeIn</button>
+   <button id="b5">fadeOut</button>
+</body>
+</html>

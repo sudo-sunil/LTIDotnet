@@ -1,0 +1,379 @@
+ASP.NET MVC
+client side code -> run on the browser
+server side code -> interact with the DB
+
+
+client side ->html (UI)
+                        angular(UI)
+                    interactive and do validations
+   Javascript , Jquery , Typescript
+
+
+client side cannot interact with the DB directly
+
+server side code which will interact with the DB
+asp.net MVC
+Model  - shape of data
+class and its fields are called shape of data as per MVC
+eg: employee->ename, empid, salary, dept, desg, skillsets
+book -> title, author, publisher,price, catrgory,isbn(book id)
+View   -> UI is designed
+Controller->we write the logic of dealing with the data
+insert , update, delete , select 
+
+is a framework created by microsoft to design a web application
+Registration form                 Login Form -> View 
+
+Name,password, email, address,mobno -> model
+
+code to register a new user in DB -> controller
+
+MVC -> model , view and controller are folders
+--------------------------------------------------------------------------
+
+
+features of asp.net mvc
+1. supports razor scripts
+razor scripts are combination of C# and html
+razor script will have an extension .cshtml
+
+ASP.NET MVC application is inbuilt with Razor Engine
+Razor engine is used to execute Razor script
+
+Razor is a simple programming syntax for embedding server code in the web pages
+
+asp.net razor engine supports 2 languages
+csharp                           vb.net
+cs+html -> .cshtml       vb+html-> .vbhtml
+
+main rules for razor syntax
+razor code is enclosed in @{ ....
+                                             } block
+if we want a single razor statement -> @ (inline expressions)
+every executable code ends with ;
+variable are declared using datatypes of .net
+@{
+int age=34;
+string name="Geeta";
+string email="deepa977@gmail.com";
+
+
+}
+var result=add(67,78);
+C# code is case sensitive
+
+
+2 . HTML Helpers
+they are superset of html tags
+they are used with razor syntax
+
+
+server side code -> web server
+asp.net mvc application -> inbuilt web server which is a part of .net framework installation is called IISExpress
+Internet information server
+
+eg: apache tomcat (java / php)
+       java web server
+     A web server is a server software or a system to accept the http request and execute the server side code and send the o/p received to the client side on the browser
+
+Angular -> client side application -> connect to server side code written in WebAPI
+creating these types of application is called SPA (single page application)
+It is compabitable with any type of devices
+
+if my client side code is React / Angular/ Node which is based on Javascript library, those application are called as SPA
+
+
+Asp.net MVC -> web application using MVC pattern
+
+View -> UI (cshtml)
+Controller -> code for server side interaction
+model -> define the shape of data we are going to work with
+
+evolution
+80 -> html 4( design ui)  
+        to make it interactive they invented Javascript/ vbscript(FileSystemObject) to store data
+90->html (UI)
+       scripting languages like vbscript/javascript (dynamic)
+       classic asp -> server side code and interact with DB using ADO (vb6.0 syntax)
+2000 -> asp.net 
+it was a event driven architecture
+2 files (.aspx) -> UI ( html or asp.net server side controls)
+            (.aspx.cs) -> code behind file -> write the  code to connect to DB and perform all DB operations using ADO.NEt
+
+2012 -> asp.net mvc 
+it will develop application that process request in the server 
+it delivers UI in the form of view
+it renders a view at server side and sends plain HTML as output  to the user
+
+2017-2018-> SPA (angular /react )
+it is a library based on javascript
+it will not do any server side processing
+it will serve only html and javascript files on client side
+it will get only server side data thru services(webapi) that run on the server
+
+html                                                                                   html helpers
+<input type="text" name="txtname" id="txtname">    @Html.TextBox("txtname")
+<textarea name="txtaddress">                                       @Html.TextArea("txtaddr")	<input type="radio" value="M" name="gender">       @Html.RadioButton("gender","M")
+<input type="checkbox" name="" value="">	@Html.CheckBox("quali","BE")
+<select name="ddlnation">                                                                @Html.DropDownList("ddlnation",new 
+<option value="IN">India</option>                 List<SelectedListItem>{new SelectedListItem{Text="India",Value="IN"},new SelectedListItem{Text="America",Value="US"})
+<input type="submit">
+<input type="reset">
+
+designing view in MVC project 
+it supports both html helpers as well as html tags
+
+
+1.asp.net mvc application
+1. model 
+2.views 
+3.controller 
+these 3 are folders in an MVC project
+
+2. controller classes follows a naming conventions
+we can give any class name but it will end with the keyword controller
+
+HomeController.cs
+AccountsController.cs
+LoginController.cs
+
+which of these are valid controller names
+1.Home
+2.ControllerHome
+3.HomeController
+
+3. controller will contain methods
+C# methods defined
+public int MethodName(parameter)
+
+Controller methods are called action methods
+controller methods will not return void or any primitive datatype
+they return ActionResult which actually return a view
+
+ Controller -> ActionResult -> View
+the action methods in controller has to be public 
+
+4. for every action we have to write 2 methods
+
+Actions are identified by attributes 
+attributes are predefined classes in C# which will convey a special meaning to the compiler
+attributes can be given before a class, before a method, before a property
+they are enclosed in []
+[HttpGet] - default
+is a get action
+get will load a blank page and takes input from user
+[HttpPost]
+is a post action
+send the data to the server for processing
+
+Folders in MVC Project
+AppData -> localdb willbe stored in App_Data
+AppStart ->RouteConfig.cs  -> routing is defined in asp.net mvc project
+app-routing-module.ts -> angular 
+Model-shape of data 
+Controllers -> will contain the get /post action  methods
+Views -> UI
+global.asax ->global variables are defined in global.asax which can be accessed by any controller or views of the current project
+Packages.config -> any 3rd party packages we are using in the project will be configured in this file
+web.config->we can configure connection _string , app_settings 
+
+program.cs
+class obj=new class();
+obj.methodname();
+
+the o/p of the method is displayed in the console
+
+in mvc we are calling a method
+where is the o/p of the method displayed? it is displayed in the view
+what does these methods return -> return View()
+
+how does the action method known which is the view associated with it?
+the action method and the view have the same name
+
+<form> -> the submit and reset button will work
+in html helpers -> @using(Html.BeginForm())
+{
+}
+
+Entity Framework
+it is a technology used by .net applications to interact with DB
+? ado.net
+Features of ADO.NET
+it is a combination of OOps language and SQL Server
+SqlCommand -> class
+SqlCommand cmd=new SqlCommand("insert into employees values("+eid + "',"+name +"','"+dept+"','"+desg+"',"+sal+")",con);
+the developer has to mix the sql code with C# code
+the above statement is it 100% oops?
+why not have DB connectivity also 100% oops oriented
+Java -> ORM (object relational mapper)
+DB  -> mapped -> class
+tables-> mapped ->class
+views->mapped -> class
+columns(tables/views)->mapped->property
+stored proc-> mapped -> function
+first ORM -> java-> Hibernate
+ORM ->.nET-> Entity Framework
+
+Entity framework supports 3 approaches
+
+DB First Approach
+Code First Approach -(tues)
+Model First Approach-(tues)
+
+sql -> select 
+           from 
+            where 
+            group by
+            having
+            order by
+
+Linq->from
+           where
+           select 
+LINQ -> query language
+Lambda -> Expression Language
+
+EF -> coding is easier for developers compared to ADO.NET
+1. no need to establish connection
+2.no need to give sql queries directly
+3. no need to load the providers
+   
+     DB First approach
+(insert/select)
+in this approach the DB is already created , we have to map the DB into Conceptual model
+
+Conceptual model is created from the existing DB
+to map the storage model to conceptual model
+in the .net mvc project
+right click model -> add-new item->data->ado.net entity data model
+
+in the connection string for entity framework it will point to 2 files
+csdl-conceptual storage data layer ->conceptual model
+ssdl-storage storagemodel data layer -> storage model
+
+Entity framework follows a naming convention when creating mapping classes
+DB                    Conceptual class name
+LTIMVC                LTIMVCEntities
+Master	            MasterEntities
+Temp                    TempEntities
+DemoDB                DemoDBEntities
+
+in EF (Entity Framework) we have to create tables with PK
+otherwise it will give validation errors
+
+when form is loading in the browser, u want it be loaded with Data from DB
+the code has to be written in get action
+
+
+return View()  ->it returns a blank view
+
+return View(data)-> it returns a view with data
+
+IEnumerable<Employee> obj=new List<Employee>();
+only collections implementing IEnumerable can use foreach loop to retrieve the data
+
+2 ways to link pages
+1st approach is we can redirection in controller
+return RedirectToAction("actionmethod","controller name")
+controller name is required if the action method belonged to a different controller
+2nd approach we can redirect in views
+@Html.ActionLink("Link Text","Action Methodname","controller name")
+controller name is required if the action method belonged to a different controller
+  						                                    	If we want the web page to render data when the page is loading , then we need to write the code in get methods
+
+if we want to retreive data from db (select) but based on parameters
+select * from employee where dept= textbox && salary > textbox
+
+Get -> textbox -> input of data
+  submit button
+post -> send the filters and retreive data based on the filters from the db
+
+Login page ->
+username 
+password ->get
+
+post ->based on the user credientials it will the validate the password in the DB
+
+data has to passed from controller to view
+data retreived from DB is done in controller but the display of that data will be done in view
+Statemanagement techniques in MVC
+model binding
+return View(data)
+in the view @model List<Employee>
+
+Session ->it will hold the values for a time limit
+time limit -> login and logout
+if we are idle for 3 to 4 minutes and do not do any activity on the website then the data will become null and session will expire
+Session["variablename"]=value;
+this is the syntax for creating session variable
+the data type of session variable is object datatype
+session variables require typecasting
+
+
+Session["age"]=32;
+int age=(int)Session["age"];
+
+1. <form> -> it will work for get 
+<form method="post">
+
+2. If the parameter for the post method is not model data, it is primitve data types
+except for string , rest all datatype has to be made as optional parameter
+optional parameter in C# -> (int age=32, decimal salary=10000)
+
+3. Query String -> pass the parameter along with the URL
+passing the URL Parameter is called Query String
+<a href="filename" target="_self">
+href, target are html attributes
+if we r not specifying any attributes , define as null
+
+EmpID    Name
+1               XYZ
+ 1             ABC
+2                EFG
+3             MNO
+  
+
+EmpId=10 -> 1 , XYZ
+when search is based on primary key and we are sure only 1 row of data it will retreive , we need not use foreach loop to iterate
+so we use SingleOrDefault()
+if data is found return the single row
+if data is not found return default ->null
+if there are repeating data , it will throw an exception
+ 
+FirstOrDefault() - 1,XYZ
+
+LastOrDefault()- 1, ABC
+
+
+When ever the view has a submit button, then in controller we have to write the Get method as well as post method
+
+ViewBag
+
+ViewData
+
+TempData
+
+Assignment for today
+1. select product based on category
+take input of category and display all products belonging to that category
+perform edit and delete of products using UrlParameter
+
+
+Assignment for WeekEnd
+
+Web project of LTI do it in MVC
+create a registration table as per the fields
+But have RegID as Primary Key identity
+create login and check if login credentials are valid in the DB table
+DB should be thru EF DB First Approach
+
+send me the changed DB to my mail ID deepa977@gmail.com
+
+
+
+
+									
+
+ 
+
+

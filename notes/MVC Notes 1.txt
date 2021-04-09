@@ -1,0 +1,190 @@
+1. modify the database
+create new tables
+create new column to existing table
+drop a column
+change the datatype
+create a stored procedure
+
+2. how to make these changes in model.edmx
+changes made in DB should be updated to model.edmx
+Good practice is create model.edmx only once
+
+3. new type of view called strongly typed views
+     how to perform validations
+validation can be done to model class using DataAnnotation namespace
+DataAnnotations has inbuilt attributes like Key, Required, Email, Pattern, Range
+We were retrieveing every form control values using Request.Form["txtname"]
+emp.name=Request.Form["txtname"];
+If we are retreiving the data entered in view using Request.Form then these views are called weakly typed views
+
+
+Strongly typed views will be binded to the model
+We have to use the Html Helper classes ending with For
+@Html.TextBoxFor(x=>x.projname)
+@Html.TextBoxFor(x=>x.domain)
+it uses lambda expression as parameter
+and what ever input value we give it will automatically bind to the model property
+
+
+How to bind DropDownList with project details so that we can assign project to every employee
+we will use ViewData 
+ViewData is used to pass data from controller to view
+ViewData["variable name"]=value;
+ViewData also requires typecasting
+
+  In a web page how many request we make
+ViewData can hold data for 1 request only
+eg : if we use ViewData in Get Action it will retain data only for Get
+In post action the data will be lost
+
+if we use ViewData in Post Action it will retain data only for Post
+In get action the data will be lost
+
+Solution to retain values : we have to do rebinding
+
+
+Product table is already there , u finished insert, update and delete 
+Now assignment
+create OrderInfo
+OrderId int pk identity(10,10)
+Pid foreign key reference
+qty 
+total  amount  -> price*qty ( do calculation and insert to table. no need to display on the browser)
+payment mode -> card/ cash
+status-> success /failure
+Insert data to OrderTables
+
+1. Update the model.edmx
+2. Insert order -> strongly typed view/Weakly typed
+3. Bind the product details to dropdownlist 
+4. data annotations and do the required validation
+
+
+
+------------------------------------------------------------------------------------------------
+Today's topics
+custom model ? why it is required? 
+ and how to call stored procedure from the EF
+Code First Approach 
+
+Employee 
+Project
+
+EmpID   EName   Dept  ProjName    Domain
+1.join is required to refer columns from multiple tables
+2. If we use joins and get the data, to display in view we can bind only one model
+we cannot bind multiple models
+
+if we have to display data from both models we can create a custom model which has property from both table
+
+Assignment
+create a list which shows the order details and the product details and display the list in a view
+
+OrderId ProductName Price Qty TotalAmount payment mode Status
+
+next we will see stored procedure
+How to have multiple submit button in a view
+
+ViewBag is also used to display data from Controller to View
+1. ViewBag stores data as dynamic datatype
+2. dynamic datatpes will resolve the type at runtime
+no need to do typecasting
+becoz it will resolve the datatype at runtime, intellisense will not be available
+3. it is slower compared to viewdata or session or tempdata
+4. ViewBag.VariableName="value"
+5.ViewBag also will hold the data for only one request
+Session["data"]
+ViewData["data"]
+ViewBag.data=value
+
+how to handle multiple submit button 
+
+As per HTML is concerned 1 form can have 1 submit
+We might require multiple submit button as per our project
+
+Assignment
+
+create a stored proc to select Orders based on OrderID
+call the SP in MVC controller
+display the values in table format in view
+
+Code First Approach
+Login 
+Logout
+TempData
+Layout page for MVC Project
+
+
+Code First Approach is mainly useful in a Domain Driven Design 
+Domain -> Banking 
+              ->Online Shopping 
+              ->ticket booking 
+
+u will not create tables using DDL queries of SQL Database language
+instead u will create C# classes which will convert the classes into DB Tables
+C# classes we create are called POCO classes
+Plain Old CLR Objects
+
+Domain Classes/Poco Classes -> EF -> Database (Tables)
+we will not have the .edmx file and its design 
+
+Domain classes or POCO classes 
+Student 
+StudentID
+Name
+Branch
+Sem
+AggrMarks
+CourseID (FK)
+
+
+Course
+CourseID
+CourseName
+course should have many students -> Collection<Student> 
+
+Entities Classes or Context class
+
+Assignment
+Create a new Asp.NET web application project
+Create 2 Domain classes
+Publisher
+[key]
+PubID
+PublisherName
+MobNO -> long 
+Book
+ISBN -> Key
+Title
+AuthorName
+Category
+Price
+PubID ->FK
+Create a new DB called CFAssignment
+In Mvc perform insert for Publisher / Book
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

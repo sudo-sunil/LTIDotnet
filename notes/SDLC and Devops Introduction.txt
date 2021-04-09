@@ -1,0 +1,248 @@
+SDLC -> software development life cycle
+It follows different stages for developing a software
+Requirement Gathering/Analysis
+Add 2 numbers
+1. is number passed as parameter
+2. do we need to do addition on a const hardcoded value
+3. addition should be performed on real numbers or decimal numbers
+3A.in the parameter is one parameter an int and another float
+3B . if both parameters are int
+3C. if both parameters are floating point numbers
+should it print the o/p on the o/p windows or should it return a value
+
+Defining
+once we got all the requirement and analysis is done, the next step is to clearly define and document the product requirement
+and get it approved by the customer and from the market analyst
+The entire requirement is defined in a document called SRS (software requirement specification)
+
+Designing:SRS is used as a reference for the product archtitect to come out with the best design , They start designing the product based on DDS-Design Document Specification
+
+
+based on the DDS the review will be done by all the stake holders on various parameters like budget, time constraint, resources in the technology is available or not,risk factors,
+DDS is a design document in which we design the entire SRS document 
+ER diagram-> for DB 
+class diagram -> if it is oops based
+flow charts ->
+
+
+Coding->developers will start coding following the guidelines defined in DDS document during designing stage
+they decide on the programming languages like java, ,net, c++, AI, php
+they choose if the language is compiler based or interpreter basd
+what db has to be used in backend
+if it is sql db or no sql db
+
+
+Testing:we call it as a subset for all the stages 
+in this stage the coding is tested where the defects are identified, it will report the defects, tracked, fixed and retested until the product reaches the quality standard defined in the SRS
+
+Deployment: product is ready and is available in the market
+customer will finally approve the product by performing UAT(user acceptance testing)
+
+Maintenance: the maintenance is a on going phase for all products
+there will be separate customer support team who will maintain the product queries and address to customer and resolve the queries
+
+SDLC models followed in the industry
+
+water fall model
+it is the first model introduced in process model
+it is also called as linear sequential life cycle model
+
+each phase should complete before the next phase begins
+there should not be any overlapping in the phases
+
+
+adv :
+simple and easy to understand and use
+phases are processed and completed one at a time. clearly defines each stages.we have well understood milestones
+
+disadv
+it is having high amounts of risk and uncertainity
+it is difficult to measure progress within the stages
+
+
+iterative
+simple implementation of small set of software requirements is completed and iteratively it enhances the evolving versions until it is fully implemented and ready to be deployed
+problem statement -> calculator
+
+keypad () -> calculator V1.0
+keypad () + o/p ()->calculator v1.1
+keypad () + o/p ()+add()+operators -> calculator v1.2
+add()
+sub()
+mul()
+div()
+op()
+keypad
+o/p screen
+calculator 
+
+Requirement -> Build1(key pad) -> small protion (design development, testing and implementation)
+                           Build2 -> (o/p window) small ( parallely)
+                           Build 3->
+                           final build -> dotnet FSD(final result)
+
+adv -> results are obtained early and periodically
+parallel development can be planned
+
+disadv ->more resources are required 
+                more management attention is required
+                  end of the project may not be known as risk is high
+developer 1 -> keypad -> testing team(identify the bugs)
+                         o/p screen 
+testing team -> shows the bug in the keypad 
+
+
+
+spiral model->iterative model +systematic controlled aspect of waterfall model
+phases(time of completion)+ iteration(small tasks is taken up and completed one after another)
+
+adv ->users can see small portion of the working software can be seen early 
+disadv -> spirals may go on indefinately as each iteration within a phase may take a long time to complete one phase itself
+
+
+V model - entire process happens in a V Shape
+V model is also known as verification and validation model
+it is a waterfall model
+phase 1 -> development -> testing is associated
+adv-> it is considered to be a highly disciplined model and the next phase starts after the completion of the previous phase
+
+disadv 
+it is not a good model for long and ongoing projects
+not good for object oriented project
+
+
+ big bang model
+they donot follow any specific process
+they need only money and some reources for development -> input for this model
+o/p -> software developed
+the s.w may be suitable or may not be suitable 
+adv 
+big bang is developed by 1 or 2 people with less resource
+it is suitable for academic and practise project
+
+disadv
+it is not suitable for big and ongoing projects
+it will not fulfill the customer requirement
+
+
+
+download the images of all the SDLC models
+waterfall
+
+iterative
+
+spiral
+
+vmodel
+big bang
+
+
+public int add(int x,int y)
+{
+return x*y;
+}
+unit testing is done by a developer where he test his code before it goes to the QA team(quality assurance team -> testers)
+
+developer will start writing test cases which is called unit test
+1. call the method that has to be tested
+2.he will pass values
+3. he will expect some output
+4.if the actual o/p and expected output is different test case has failed
+
+5.Test cases are written based on assertions
+Assert.AreSame(6,add(3,3));
+
+
+Component testing -> test each individual component along with the usability and behaviour
+button,combo box, radio button testing
+integration testing ->testing the entire system as a whole is called as integration testing
+integrate all modules done by different developers as a whole and test it
+load balance testing  -> QA teams testers will do it
+it will test the effectiveness of the application developed
+w.r.t speed, which component is loading slowly
+they will simulate test enviroment for 100 users, 1000 users accessing the web page at the same time
+
+UAT -> user acceptance testing -> customer side
+
+Lean model
+it is a software development model inspired by lean manufacturing company practices and principles
+lean is based on 7 principles
+eliminate waste
+amplify learning
+decide as late as possible
+deliver as fast as possible
+empower the team
+build integrity
+see the whole
+
+the lean process is about working on only what must be worked on at a time,there is no room for multitasking
+
+-----------------------------
+
+ITIL
+information technology infrastructure library
+IT -> product based
+IT -> service based
+it is a best practice for delivering IT services
+ITIL concepts is based on 5 key principles
+1. delivering maximum value to customers
+2.optimizing resources and capabilities
+3. offering services that are useful and reliable
+4.planning processes with specific goals in mind
+5. defining roles clearly for each tasks
+
+
+Agile
+it is there since a decade
+it has become a major driving force behind software development
+Agile methodology is applied for technical and non technical projects
+
+agile team will have 6 to 7 people
+scrum master
+2 to 3 developers
+1 or 2 testers
+
+in waterfall model-> phase
+in iterative model-> task
+in agile model -> sprint
+sprint is a task which the agile team is working and it will take usually 2 ot 4 weeks to complete
+daily the members of the agile team hold a standup meeting.it will be for 10 to 15 mins
+they will give inputs of the previous day task status
+if task is completed or not
+what issues they r facing
+what resources they are expecting
+
+tea break till 4:15
+
+introduction to devops
+ collabaration between the Development and IT Operations to make software production and deployment in a automated and repeatable way
+coding(development)
+test(testing)
+deploy 
+
+Dev + ops
+"Developement" +"operations"
+
+before devops how it was working
+1. development team, testing team and the operation team worked in complete isolation
+2.testing and deployment were isolated activity done after design - build(coding)
+3. testing and deployment consumed more time than the actualbuild cycles
+4. more time were spent on testing, re development and deploying instead of building the final project
+
+
+deployement server was a seperate machine -> order for new server , the develoment team works on the coding, testing team wud work on testing the code and operations team wud do extensive paper work as required in the enterprises to deploy the infrastructure
+
+devops allows agile development teams to implement continuous integration and continuous delivary . 
+This helps to launch products faster into the market
+
+when to adopt to devops and not adopt devops.
+devops life cycle
+devops workflow
+difference between agile and devops
+devops principles
+devops -> devops engineer (what is his role)
+Github
+
+
+
+

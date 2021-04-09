@@ -1,0 +1,449 @@
+AirLine Reservation System
+Passenger Registration
+PID-PK
+Title
+FirstName
+LastName
+EmailID
+Password
+DOB
+PhoneNumber
+IdentityNumber
+CovidCertificate
+
+City Information
+Airport Code(PK)
+Airport Name
+CityName
+State
+Zip Code
+
+Flight Schedules
+ – Flight Number(PK)
+-Airport Code(FK)
+– Flight Departing Time
+– Flight Arrival Time
+– Origin
+– Destination
+– Flight Status
+– Cost (basic fare)
+– Seats Available Eco
+-Seats Available Business
+
+
+Flight Reservation
+Pnr_no (PK)
+Flight_Number(FK)
+PID(FK)
+Reservation_Date
+Reservation_Time
+num_of_Seats
+Classtype
+total_price
+status -> payment successful -> ticket booking is confirmed
+                payment is failure -> ticket booking is not confirmed
+
+
+Payment Details
+P_Id(FK)
+CardNo(PK)
+card_type
+Expiry_Month
+Expiry_year
+Balance
+
+Cancellation
+Cancellation_Id(pk)
+Pnr_no(FK)
+Pid(FK)
+DateOfcancellation
+timeofcancellation
+RefundAmount
+Status
+
+Bus Reservation System
+
+Bus
+BusID
+Type (A/c NonA/c Sleeper NonSleeper)
+Max Seats
+
+RouteInfo
+RouteID(PK) 1               2
+ToLocation  Blr              Mysore
+FromLocation Mysore     blr
+Fare
+
+BusRoute
+BusId(FK)    
+RouteId(FK)
+DepartTime
+
+PassengerInfo
+PID-PK
+Title
+FirstName
+LastName
+EmailID
+Password
+DOB
+PhoneNumber
+IdentityNumber
+
+
+Bus Reservation
+Ticket_no (PK)
+Route_ID(FK)
+PID(FK)
+Reservation_Date
+num_of_Seats
+total_price
+
+Payment Details
+P_Id(FK)
+Wallet_Type -Paytm, Google Pay, Debit Card, Credit card , Online bankning
+Paytm Mobileno
+AccNo
+Card number
+card_type
+Expiry_Month
+Expiry_year
+Balance
+
+Cancellation
+Cancellation_Id(pk)
+Ticket_no(FK)
+Pid(FK)
+DateOfcancellation
+RefundAmount
+Status
+
+Contract
+Pnr_No(PK)
+P_Id (FK)
+Bus_Id(FK)
+NoOfDays
+DriverStatus
+ContractAmount
+CautionDepositAmount
+
+
+OnLine Examination
+certificate/result
+
+CertificateID -> (pk)
+examid - FK
+studentId-FK
+ScoredMarks
+result
+Date
+Status pass/failed
+
+
+Exam
+ExamId pk
+subjectcode fk
+level
+datetime 
+status 
+
+students
+studid (pk)
+password
+name
+dob
+address
+contactno
+createddate
+lastlogin
+status
+
+subjects
+subjectcode
+rules
+totalmarks
+passmarks
+examduration
+status
+
+
+
+Farmers Scheme
+
+Farmer / Bidder
+Unique_Id
+FullName
+ContactNo
+Email_ID
+Address Line1
+Address line 2
+City 
+State
+Pincode
+Land Area
+Land Address1
+Land Address2
+Land Pincode
+Identity1
+Identity 2
+Identity3
+Password
+RegType (Farmer/Bidder)
+
+Bank Details
+AccNo(PK)
+IFSC Code
+Unique_ID (FK)
+
+CropDetails
+
+CropID
+CropType
+FertilizerType
+Qty
+MSP
+SoldPrice
+Total Amount
+Unique_Id(Farmer Id) PK
+
+
+BiddingDetails
+BiddingId(pk)
+CropId(FK)
+UniqueId(BidderId) FK
+Bid Amount
+
+Insurance
+Insurance_No
+Insurance_Scheme
+Season
+Crop Type
+Zone Type
+Area In Hectres
+Insurance Amount
+
+
+Insurance_Policy
+Policy_No - PK
+Insurance_No Fk
+UniqueID(FarmerID) -FK
+InsuraceAmount_Paid
+InsuranceAmount_Payable
+
+
+Claim Tables
+Claim_Id (PK)
+Insurance_No(FK)
+PolicyNo(FK)
+Reason
+
+Online Banking 
+---------------------------------
+
+RegisterOnlineBanking
+
+AccountNo- FK
+LoginPassword
+TransactionPassword
+OTP
+
+Account
+AccountNo - PK
+Title
+FirstName
+MiddleName
+LastName
+EmailID - unique
+AadharNo- unique
+DOB
+Residential Address1
+Residential Address 2
+Landmark
+City
+State
+PinCode
+Permanent Address 1
+Permanent Address 2
+Permanent Landmark
+Permanent City
+Permanent State
+Permanent PinCode
+Occupation Type
+Source of Income -> Salary, Rent, Business,Pension
+Gross Annual Income
+DebitCard
+NetBanking
+TermsCondition
+Status
+
+Transaction
+TransID
+AccNo
+TransactionDate
+TransactionType
+Narration
+Amount
+Balance
+
+
+FundTransfer
+
+TransferId - PK
+AccNO
+BeneficiaryAccNo(FK)
+TransferType -IMPS, NEFT or RTGS
+TransactionDate
+MaturityInstructions
+Remark
+Amount
+status 
+After Fundtransfer status is succes then the details should be posted in travsaction also
+
+Add Beneficiary
+BeneficiaryAccNo (PK)
+BankName
+Name
+NickName
+TransferLimit
+IFSCCode
+BankDetails -> same bank / different bank
+
+
+
+Online Shopping
+User /Retailer Registration
+
+ID
+Name
+address
+Email
+Mobno
+password
+type
+
+Admin -> we can assume 1 admin and hardcode his details
+
+Category
+
+CategoryId-pk
+CategoryName
+
+
+Product
+
+ProductId
+ProductName
+ProductImage
+CategoryID -(FK)
+Price
+Status ->Approved/Pending/Rejected
+RetailerID-(FK)
+Stock
+
+Order
+OrderID -(Pk)
+UserId(fk)
+OrderDate
+OrderAmount
+PaymentMode
+
+OrderDetailsCart
+slNo(pk)
+orderId(fk)
+productId(fk)
+qty
+totalamount
+
+WishList
+WishListID - PK
+UserID - FK Email/MobNo
+ProductId- FK
+qty
+
+
+Finance
+
+UserRegistration 
+UserId
+Name
+PhoneNo
+Email
+Username
+address
+password
+
+EmiCard
+VirtualCard -(pk)
+cardtype-(gold/titanium)
+Bank
+ACCNo
+IFSCCode
+UserId - FK
+Limit
+Balance
+Status
+
+Product
+ProdId
+ProdName
+ProdImage
+Category
+Price
+Emi Scheme1
+Emi Scheme2
+Emi Scheme3
+Emi Scheme4
+
+OrderInfo
+OrderID
+UserID
+VirtualCardNo
+ProductID
+EmiDate
+EMIPaid
+EMIBalance
+
+
+GeneralInsurance
+
+UserDetails
+Name
+Address
+MobNo(PK)
+Email(unique)
+
+
+Vehicle_Details
+VehicleRegNo(PK)
+ChasisNo
+EngineNo
+VehicleType
+Manufacturer
+Model
+DateOfPurchase
+
+Insurance Plan
+PlanID
+Coverage (Third Party Liability/Comprehensive)
+PolicyAmount
+insurance type (Motor Vehicle/TravelInsurance)
+
+PolicyDetails
+PolicyNo(PK)
+MobNo(FK)
+VehicleNo(FK)
+TicketNo
+PlanId(FK)
+NoOfYears
+PolicyAmount
+AmountPaid
+SumAssured
+Status
+
+Claim
+ClaimNo ->PK
+PolicyNo-FK
+MobNo-FK
+Reason
+Status (Approved/Non Approved)
+ClaimAmount
